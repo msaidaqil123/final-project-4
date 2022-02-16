@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    180deg,
+    rgb(119, 174, 245),
+    rgb(216, 192, 255)
+  );
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+.card {
+  background-color: rgba(47, 48, 49, 0.357);
+  width: 60vw;
+  height: 60vh;
+  border-radius: 10px;
+  padding: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.right p {
+  font-size: 6rem;
+}
+
+.input {
+  width: 100%;
+  display: flex;
+}
+.input input {
+  flex: 1;
+  padding: 10px;
+}
+.input button {
+  padding: 0 10px;
+  background-color: rgb(52, 51, 53);
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+.input button:hover {
+  background-color: rgb(36, 36, 36);
+}
+
+/* loading */
+.loading {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-top: 80px;
+}
+.loading:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: loading 1.2s linear infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+/* responsive */
+/* ----------- iPhone X ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .card {
+    width: 100%;
+    height: 100%;
+    padding: 20vh 0 0 0;
+    align-items: flex-start;
+  }
+
+  .input {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .input input {
+    padding: 10px;
+    width: 80%;
+  }
+  #btn-submit {
+    margin-top: 20px;
+    width: 30%;
+    padding: 10px;
+  }
+  .weather {
+    flex-direction: column;
+  }
+  .loading {
+    margin-left: 38vw;
+  }
+}
